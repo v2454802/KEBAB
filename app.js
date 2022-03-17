@@ -1,12 +1,23 @@
 const express = require('express');
-
+const hbs = require('hbs');
 const app = express();
 const PORT = 3000;
 const path = require('path');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const FileStore = require('session-file-store')(session);
+<<<<<<< HEAD
 const hbs = require('hbs');
+=======
+
+
+
+hbs.registerPartials(path.join(process.env.PWD, 'views', 'partials'));
+
+const routerHome = require('./routers/home');
+const routerRegistration = require('./routers/registration');
+
+>>>>>>> master
 
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
@@ -30,14 +41,12 @@ const sessionConfig = {
 };
 app.use(session(sessionConfig));
 
-app.get('/', (req, res) => {
-  res.render('home');
-});
-app.get('/home', (req, res) => {
-  res.render('home');
-});
-app.get('/registration', (req, res) => {
-  res.render('registration');
+app.use('/', routerHome);
+app.use('/registration', routerRegistration);
+
+app.use((req, res) => {
+  res.status(404).json('Запрашиваемой страницы не существует');
+
 });
 
 // app.use((req, res, next) => {
