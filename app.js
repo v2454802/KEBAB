@@ -7,6 +7,8 @@ const path = require('path');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const FileStore = require('session-file-store')(session);
+const hbs = require('hbs');
+hbs.registerPartials(path.join(process.env.PWD, 'views', 'partials'));
 
 hbs.registerPartials(path.join(process.env.PWD, 'views', 'partials'));
 
@@ -35,7 +37,6 @@ const sessionConfig = {
   saveUnitialized: false,
 };
 app.use(session(sessionConfig));
-
 
 app.use((req, res) => {
   res.status(404).json('Запрашиваемой страницы не существует');
