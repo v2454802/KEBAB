@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { User } = require('../db/models/user');
+const sha256 = require('sha256');
+const { User } = require('../db/models');
 
 router.get('/', async (req, res) => {
   res.render('registration');
@@ -7,13 +8,15 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   const {
-    name, email, password, role,
+    login, email, pass, role,
   } = req.body;
-  if (name && email && password && role) {
+  console.log(req.body);
+  if (login && email && pass && role) {
     try {
-      const user = await User.create({
-        name, email, password, role,
+      const user = User.create({
+        name: login, email, password: sha256(pass), role,
       });
+
       res.sendStatus(201);
     } catch (error) {
       console.log('Error', error);

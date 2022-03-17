@@ -12,15 +12,13 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.belongsToMany(models.Food, { through: 'Baskets', foreignKey: 'odrer_id' });
-      this.belongsTo(models.Users, { foreignKey: 'user_id' });
-      this.belongsTo(models.Couriers, { foreignKey: 'courier_id' });
+      this.belongsTo(models.User, { foreignKey: 'user_id' });
+      this.belongsTo(models.User, { foreignKey: 'courier_id' });
     }
   }
   Order.init({
     user_id: DataTypes.INTEGER,
     courier_id: DataTypes.INTEGER,
-    createdAt: new Date(),
-    updatedAt: new Date(),
   }, {
     sequelize,
     modelName: 'Order',
