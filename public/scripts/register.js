@@ -1,10 +1,12 @@
 const { regForm } = document.forms;
+
 regForm.addEventListener('submit', async (e) => {
   e.preventDefault();
+  //console.log(regForm);
   const {
     login, email, pass, roleId,
   } = e.target;
-  // console.log(regForm.roleId.value);
+  
   const response = await fetch('/registration', {
     method: 'POST',
     headers: {
