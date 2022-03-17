@@ -1,10 +1,8 @@
-
+/* eslint-disable no-return-assign */
 const { formLogin } = document.forms;
 formLogin.addEventListener('submit', async (e) => {
   e.preventDefault();
   const { email, password } = e.target;
-  console.log('========');
-  console.log(email.value);
 
   const response = await fetch('/signin', {
     method: 'POST',
@@ -13,9 +11,12 @@ formLogin.addEventListener('submit', async (e) => {
     },
     body: JSON.stringify({ email: email.value, password: password.value }),
   });
-  if (response.role === 'u') {
-    window.location = 'http://localhost:3000/';
-  } else {
-    window.location = 'http://localhost:3000/courier';
+  const user = await response.json();
+  if (user.role === 'u') {
+    return window.location = 'http://localhost:3000/';
   }
+  if (user.role === 'c') {
+    return window.location = 'http://localhost:3000/courier';
+  }
+  alert(user.message);
 });
