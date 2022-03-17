@@ -1,0 +1,11 @@
+body {
+  background-image: url(../images/burger.jpg);
+}
+
+
+ .container {
+  display: flex;
+  justify-content: space-around;
+} 
+
+
