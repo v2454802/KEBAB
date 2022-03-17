@@ -8,7 +8,6 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   const { email, password } = req.body;
-  console.log(req.body);
   if (email && password) {
     try {
       const user = await User.findOne({ where: { email } });
@@ -17,6 +16,7 @@ router.post('/', async (req, res) => {
           req.session.user = {};
           req.session.user.id = user.id;
           res.json({ role: user.role });
+          console.log(user.role)
         } else {
           res.json({ message: 'не правильный пароль!!!' });
         }
