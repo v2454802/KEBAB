@@ -29,7 +29,11 @@ const sessionConfig = {
   saveUnitialized: false,
 };
 app.use(session(sessionConfig));
+
 app.get('/', (req, res) => {
+  res.render('home');
+});
+app.get('/home', (req, res) => {
   res.render('home');
 });
 app.get('/registration', (req, res) => {
