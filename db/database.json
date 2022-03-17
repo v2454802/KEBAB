@@ -1,6 +1,7 @@
 {
   "development": {
     "username": "admin",
+
     "password": "12345",
     "database": "kebab",
     "host": "127.0.0.1",

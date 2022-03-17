@@ -16,8 +16,6 @@ module.exports = (sequelize, DataTypes) => {
   Basket.init({
     food_id: DataTypes.INTEGER,
     order_id: DataTypes.INTEGER,
-    createdAt: new Date(),
-    updatedAt: new Date(),
   }, {
     sequelize,
     modelName: 'Basket',
