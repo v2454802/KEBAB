@@ -31,7 +31,7 @@ app.use(session(sessionConfig));
 app.get('/registration', (req, res) => {
   res.render('registration');
 });
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
   res.render('home');
 });
 app.get('/signin', (req, res) => {
