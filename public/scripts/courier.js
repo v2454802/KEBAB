@@ -1,18 +1,15 @@
 const { addFood } = document.forms;
-// console.log(addFood);
 addFood.addEventListener('submit', async (e) => {
   e.preventDefault();
   const { addShaurma, addPrice } = e.target;
-  // console.log(addShaurma.value, addPrice.value);
   const response = await fetch('/courier', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ shaurma: addShaurma.value, price: addPrice.value }),
+    body: JSON.stringify({ addShaurma: addShaurma.value, addPrice: addPrice.value }),
   });
   if (response.ok) {
-    console.log('wadadwadwadad');
     window.location = 'http://localhost:3000/courier';
   }
 });
@@ -26,6 +23,9 @@ delFood.addEventListener('submit', async (e) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ shaurma: delShaurma.value, price: delPrice.value }),
+    body: JSON.stringify({ delShaurma: delShaurma.value, delPrice: delPrice.value }),
   });
+  if (response.ok) {
+    window.location = 'http://localhost:3000/courier';
+  }
 });
