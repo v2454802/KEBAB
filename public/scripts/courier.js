@@ -1,25 +1,25 @@
-const { addForm } = document.forms;
-addForm.addEventListener('submit', async (e) => {
+const { addFood } = document.forms;
+addFood.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const { shaurma, address } = e.target;
+  const { addShaurma, addAdress } = e.target;
   const response = await fetch('/courier', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ shaurma: shaurma.value, address: address.value }),
+    body: JSON.stringify({ shaurma: addShaurma.value, address: addAdress.value }),
   });
 });
 
-const { delForm } = document.forms;
-delForm.addEventListener('submit', async (e) => {
+const { delFood } = document.forms;
+delFood.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const { shaurma, address } = e.target;
+  const { delShaurma, delAdress } = e.target;
   const response = await fetch('/courier', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ shaurma: shaurma.value, address: address.value }),
+    body: JSON.stringify({ shaurma: delShaurma.value, address: delAdress.value }),
   });
 });
