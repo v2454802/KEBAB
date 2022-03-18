@@ -7,8 +7,8 @@ const path = require('path');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const FileStore = require('session-file-store')(session);
-const hbs = require('hbs');
-hbs.registerPartials(path.join(process.env.PWD, 'views', 'partials'));
+// const hbs = require('hbs');
+// hbs.registerPartials(path.join(process.env.PWD, 'views', 'partials'));
 
 hbs.registerPartials(path.join(process.env.PWD, 'views', 'partials'));
 
@@ -19,7 +19,7 @@ const routerSignin = require('./routers/signin');
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 // app.set('scripts', path.join(__dirname, 'scripts'));
-hbs.registerPartials(path.join(process.env.PWD, 'views', 'partials'));
+// hbs.registerPartials(path.join(process.env.PWD, 'views', 'partials'));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
