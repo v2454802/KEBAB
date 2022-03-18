@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
         if (user.password === sha256(password)) {
           req.session.user = {};
           req.session.user.id = user.id;
-          res.json({ role: user.role });
+          res.json({ role: user.role, id: user.id });
           console.log(user.role)
         } else {
           res.json({ message: 'не правильный пароль!!!' });

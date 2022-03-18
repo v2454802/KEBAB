@@ -11,7 +11,12 @@ const FileStore = require('session-file-store')(session);
 const routerHome = require('./routers/home');
 const routerRegistration = require('./routers/registration');
 const routerSignin = require('./routers/signin');
+
 const routerCourier = require('./routers/courier');
+
+const routerLogout = require('./routers/logout');
+const foodRouter = require('./routers/food');
+
 
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
@@ -37,7 +42,12 @@ app.use(session(sessionConfig));
 app.use('/', routerHome);
 app.use('/registration', routerRegistration);
 app.use('/signin', routerSignin);
+
 app.use('/courier', routerCourier);
+
+app.use('/logout', routerLogout);
+app.use('/food', foodRouter);
+
 
 app.use((req, res) => {
   res.status(404).json('Запрашиваемой страницы не существует');
