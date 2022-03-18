@@ -8,13 +8,18 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const FileStore = require('session-file-store')(session);
 
+hbs.registerPartials(path.join(process.env.PWD, 'views', 'partials'));
+
+
 const routerHome = require('./routers/home');
 const routerRegistration = require('./routers/registration');
 const routerSignin = require('./routers/signin');
 
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
+
 hbs.registerPartials(path.join(process.env.PWD, 'views', 'partials'));
+
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
