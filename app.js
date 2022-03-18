@@ -17,7 +17,6 @@ const routerCourier = require('./routers/courier');
 const routerLogout = require('./routers/logout');
 const foodRouter = require('./routers/food');
 
-
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 hbs.registerPartials(path.join(process.env.PWD, 'views', 'partials'));
@@ -47,7 +46,6 @@ app.use('/courier', routerCourier);
 
 app.use('/logout', routerLogout);
 app.use('/food', foodRouter);
-
 
 app.use((req, res) => {
   res.status(404).json('Запрашиваемой страницы не существует');
