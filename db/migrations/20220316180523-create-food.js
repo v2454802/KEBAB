@@ -12,11 +12,11 @@ module.exports = {
         type: Sequelize.STRING,
       },
       price: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.INTEGER,
       },
       sale: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.INTEGER,
       },
       count: {
