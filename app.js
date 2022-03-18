@@ -11,9 +11,7 @@ const FileStore = require('session-file-store')(session);
 const routerHome = require('./routers/home');
 const routerRegistration = require('./routers/registration');
 const routerSignin = require('./routers/signin');
-
 const routerCourier = require('./routers/courier');
-
 const routerLogout = require('./routers/logout');
 const foodRouter = require('./routers/food');
 
@@ -41,9 +39,7 @@ app.use(session(sessionConfig));
 app.use('/', routerHome);
 app.use('/registration', routerRegistration);
 app.use('/signin', routerSignin);
-
 app.use('/courier', routerCourier);
-
 app.use('/logout', routerLogout);
 app.use('/food', foodRouter);
 
