@@ -1,6 +1,10 @@
 
 body {
-  background-image: url(../images/burger.jpg);
+  /* background-image: url(../images/burger.jpg); */
+}
+.topQuest {
+  color: aquamarine;
+  font-size: 20px;
 }
 
 
