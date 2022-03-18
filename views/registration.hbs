@@ -1,39 +1,39 @@
 
 <script defer src="/scripts/register.js"></script>
-<div class="container" style="width:500px">
-  <h1>Регистрация</h1>
+<div class="container text-white fs-3" style="width:500px">
+  <h1 class="ttt fs-1">Регистрация</h1>
   <form name="regForm">
     <div class="container signup"  id="order">
       <div class="mb-2">
-        <label for="exampleInputName1" class="form-label">Имя</label>
+        <label for="exampleInputName1" class="form-label text-white fs-3">Имя</label>
         <input required name="login" type="text" class="form-control f" id="signupName"
           aria-describedby="emailHelp">
       </div>
       <div class="mb-2">
-        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <label for="exampleInputEmail1" class="form-label text-white fs-3">E-mail</label>
         <input required name="email" type="email" class="form-control f" id="signupEmail"
           aria-describedby="emailHelp">
       </div>
       <div class="mb-3 ">
-        <label for="exampleInputPassword1" class="form-label">Пароль</label>
+        <label for="exampleInputPassword1" class="form-label text-white ">Пароль</label>
         <input required name="pass" type="password" class="form-control f" id="signupPassword">
       </div>
       <div class="mb-3 ">
         <div class="mb-3 form-check">
-          <label for="exampleCheck1" class="form-label">Выберите роль:</label>
+          <label for="exampleCheck1" class="form-label text-white">Выберите роль:</label>
           <div>
     <input type="radio" class="form-check-input f" value="c" name="role_id" id="exampleCheck2" checked>
             <input type="radio" class="form-check-input f" value="c" name="roleId" id="exampleCheck">
-            <label class="form-check-label" value="1" id="signupRole1" for="exampleCheck1">Курьер</label>
+            <label class="form-check-label text-dark" value="1" id="signupRole1" for="exampleCheck1">Курьер</label>
           </div>
           <div>
             <input type="radio" class="form-check-input f" value="u" name="roleId" id="exampleCheck1" checked>
 
-            <label class="form-check-label" value="2" id="signupRole2" for="exampleCheck2" checked>Клиент</label>
+            <label class="form-check-label text-dark" value="2" id="signupRole2" for="exampleCheck2" checked>Клиент</label>
           </div>
         </div>
       </div>
-      <button type="submit" class="btn-s btn subm">Зарегистрироваться</button>
+      <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
     </div>
   </form>
 </div>

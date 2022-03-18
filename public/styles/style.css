@@ -1,8 +1,11 @@
 
 body {
   background-image: url(../images/burger.jpg);
+  font-style: oblique;
 }
-
+#card {
+  opacity: 0.6;
+}
 
 
 

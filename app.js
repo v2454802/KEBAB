@@ -37,6 +37,7 @@ app.use('/', routerHome);
 app.use('/registration', routerRegistration);
 app.use('/signin', routerSignin);
 
+
 app.use((req, res) => {
   res.status(404).json('Запрашиваемой страницы не существует');
 });
